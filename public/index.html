@@ -27,18 +27,36 @@
 
     <!-- Main container wrapping 3 main columns -->
     <div class="container-fluid main-container">
-      <div class="row">
-        <div
-          class="bg-light bg-gradient text-dark col-md-2 left-pane border border-secondary rounded p-3"
-        >
-          <div class="border-bottom border-secondary">
-            <div class="row">
-              <h3>Spotlight</h3>
-              <!-- We can target below tags with dom to for updating -->
-              <div class="spotlight-station">
-                <p class="spotlight-name">shell</p>
-                <h5>Refresh</h5>
-              </div>
+        <div class="row">
+            <div class="bg-light bg-gradient text-dark col-md-2 left-pane border border-secondary rounded p-3">
+                <div class="border-bottom border-secondary">
+                    <div class="row">
+                        <h3>Spotlight</h3>
+                        <!-- We can target below tags with dom to for updating -->
+                        <div class="spotlight-station">
+                            <a class="spotlight-link-name" href=""></a>
+                            <p class="spotlight-owner">shell</p>
+                            <button class="spotlight-btn">Refresh</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <h3>Stats</h3>
+                    <p>total stations</p>
+                    <h4>5244</h4>
+                    <h4 class="border-top border-secondary my-3 p-2">Breakdown by Owners</h4>
+                    <div class="owners ">
+                        <!-- We can target below tags with dom to for updating -->
+                        <div class="owner-item">Caltex</div>
+                        <div class="owner-item">1502</div> 
+                        <div class="owner-item">BP</div>
+                        <div class="owner-item">200</div> 
+                        <div class="owner-item">Shell</div>
+                        <div class="owner-item">300</div>
+
+                    </div>
+                </div>
             </div>
           </div>
           <div class="row my-3">
@@ -83,12 +101,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="client.js"></script>
-<<<<<<< HEAD
     <script src="spotlight.js"></script>
 </body>
 
 </html>
-=======
-  </body>
-</html>
->>>>>>> cd162ef (added breakdown by owners stats)

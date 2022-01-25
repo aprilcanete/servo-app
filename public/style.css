@@ -24,3 +24,13 @@
     /* color: chocolate; */
     list-style: none;
 }
+
+
+.spotlight-btn {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+  }
