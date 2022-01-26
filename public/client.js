@@ -25,7 +25,7 @@ function initMap() {
             currentLat.textContent = pos.lat
             var currentLng = document.querySelector('.current-long')
             currentLng.textContent = pos.lng
-            // console.log();
+            
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.lat},${pos.lng}&key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`).then(res => {
             currentAddress.textContent = res.compound_code
             })
