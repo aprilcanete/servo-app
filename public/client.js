@@ -27,7 +27,7 @@ function initMap() {
             currentLng.textContent = pos.lng
             // console.log();
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.lat},${pos.lng}&key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`).then(res => {
-            currentAddress.textContent = `${results.address_components.types[0]} ${results.address_components.types[1]} `
+            currentAddress.textContent = res.compound_code
             })
             
             map.setCenter(pos)
