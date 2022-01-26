@@ -22,18 +22,27 @@ function initMap() {
     minZoom: 11,
     center: { lat: -25.363, lng: 131.044 },
   });
-  createMarkers();
-  let pos = {};
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      (pos.lat = position.coords.latitude),
-        (pos.lng = position.coords.longitude);
-      // console.log(pos);
-      // console.log();
-
-      map.setCenter(pos);
-    });
-  }
+  
+  let pos = {}
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            pos.lat = position.coords.latitude,
+            pos.lng = position.coords.longitude
+            var currentLat = document.querySelector('.current-lat')
+            currentLat.textContent = pos.lat
+            var currentLng = document.querySelector('.current-long')
+            currentLng.textContent = pos.lng
+            
+            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.lat},${pos.lng}&key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`).then(res => {
+            currentAddress.textContent = res.compound_code
+            })
+            
+            map.setCenter(pos)
+        })
+          
+    }   
+    createMarkers();
 }
 
 function createMarkers() {
