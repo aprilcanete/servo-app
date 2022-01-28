@@ -6,9 +6,9 @@ let map;
 const currentLat = document.querySelector(".current-lat");
 const currentLong = document.querySelector(".current-long");
 const currentAddress = document.querySelector(".current-address");
-const API_KEY = process.env.MAP_API_KEY
+// const API_KEY = process.env.MAP_API_KEY
 
-console.log(`API KEY = ${API_KEY}`);
+// console.log(`API KEY = AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`);
 
 function showCurrentAddress(address) {
   currentAddress.textContent = address;
@@ -37,7 +37,7 @@ function initMap() {
             var currentLng = document.querySelector('.current-long')
             currentLng.textContent = pos.lng
             
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.lat},${pos.lng}&key=${API_KEY}`).then(res => {
+            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.lat},${pos.lng}&key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`).then(res => {
             currentAddress.textContent = res.compound_code
             })
             
@@ -152,7 +152,7 @@ const getCurrentLocationAddress = () => {
   navigator.geolocation.getCurrentPosition((position) => {
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${API_KEY}`
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA`
       )
       .then((res) => {
         console.log("address response is", res.data);
