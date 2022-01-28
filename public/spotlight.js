@@ -7,9 +7,10 @@ var stationLocation = {};
 
 function updateSpotlight() {
   axios.get(url).then((res) => {
-    console.log(res);
+    // console.log(res);
     spotlightLinkName.textContent = res.data[0].name;
     spotlightOwner.textContent = res.data[0].owner;
+
     stationLocation.lat = res.data[0].latitude;
     stationLocation.lng = res.data[0].longitude;
     stationLocation.address = res.data[0].address;
@@ -21,9 +22,10 @@ updateSpotlight();
 spotlightBtn.addEventListener("click", updateSpotlight);
 
 function getServoLocation() {
-  console.log("updating spotlight");
+  // console.log("updating spotlight");
   showCurrentAddress(stationLocation.address);
   showLatLng(stationLocation.lat, stationLocation.lng);
+
   map.setCenter(stationLocation);
 }
 
